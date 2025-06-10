@@ -2,46 +2,46 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define MAX_BIN_LENGTH 9 // Máximo de bits por caractere (8 + '\0')
-#define MAX_CHARS 256    // Máximo de caracteres na mensagem
+#define MAX_BIN_LENGTH 9 // MÃ¡ximo de bits por caractere (8 + '\0')
+#define MAX_CHARS 256    // MÃ¡ximo de caracteres na mensagem
 
-// Função para converter binário em decimal
+/
 int binarioParaDecimal(const char *binario) {
-    return (int)strtol(binario, NULL, 2); // Converte diretamente de binário para decimal
+    return (int)strtol(binario, NULL, 2); 
 }
 
 int main() {
-    char binarios[MAX_CHARS][MAX_BIN_LENGTH]; // Array para armazenar códigos binários
-    char mensagemDecodificada[MAX_CHARS];    // String para armazenar a mensagem decodificada
+    char binarios[MAX_CHARS][MAX_BIN_LENGTH]; 
+    char mensagemDecodificada[MAX_CHARS];   
     int quantidade, i;
 
-    printf("Quantos caracteres binários deseja decodificar? ");
+    printf("Quantos caracteres binÃ¡rios deseja decodificar? ");
     scanf("%d", &quantidade);
 
     if (quantidade > MAX_CHARS) {
-        printf("Erro: o número máximo de caracteres permitidos é %d.\n", MAX_CHARS);
+        printf("Erro: o nÃºmero mÃ¡ximo de caracteres permitidos Ã© %d.\n", MAX_CHARS);
         return 1;
     }
 
-    // Entrada dos códigos binários
-    printf("Insira os códigos binários (1 por linha):\n");
+   
+    printf("Insira os cÃ³digos binÃ¡rios (1 por linha):\n");
     for (i = 0; i < quantidade; i++) {
         scanf("%s", binarios[i]);
         if (strlen(binarios[i]) >= MAX_BIN_LENGTH) {
-            printf("Erro: código binário excede o limite de 8 bits.\n");
+            printf("Erro: cÃ³digo binÃ¡rio excede o limite de 8 bits.\n");
             return 1;
         }
     }
 
-    // Decodificar os códigos binários
+
     for (i = 0; i < quantidade; i++) {
         int decimal = binarioParaDecimal(binarios[i]);
-        mensagemDecodificada[i] = (char)decimal; // Converter decimal para caractere
+        mensagemDecodificada[i] = (char)decimal; 
     }
-    mensagemDecodificada[quantidade] = '\0'; // Adicionar caractere nulo ao final
+    mensagemDecodificada[quantidade] = '\0'; 
 
-    // Exibir a mensagem decodificada
-    printf("\nMensagem codificada em binário:\n");
+  
+    printf("\nMensagem codificada em binÃ¡rio:\n");
     for (i = 0; i < quantidade; i++) {
         printf("%s ", binarios[i]);
     }
