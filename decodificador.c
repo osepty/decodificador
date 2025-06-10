@@ -5,7 +5,6 @@
 #define MAX_BIN_LENGTH 9
 #define MAX_CHARS 256
 
-/
 int binarioParaDecimal(const char *binario) {
     return (int)strtol(binario, NULL, 2); 
 }
