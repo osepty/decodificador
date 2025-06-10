@@ -2,8 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define MAX_BIN_LENGTH 9 // Máximo de bits por caractere (8 + '\0')
-#define MAX_CHARS 256    // Máximo de caracteres na mensagem
+#define MAX_BIN_LENGTH 9
+#define MAX_CHARS 256
 
 /
 int binarioParaDecimal(const char *binario) {
